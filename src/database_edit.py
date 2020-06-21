@@ -72,5 +72,13 @@ class database():
             print("Success!")
     
     def add_data(self,header,*args):
-        data = []
+        data = [] # initialize inital data list 
+
+        for arg in args: # Append N number of user arguments to data list
+            data.append(arg)
+
+        with open(self.path,'w+') as f:
+            writer = csv.writer(f)
+            for x in data:
+                writer.writerow(data)
         
