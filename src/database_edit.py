@@ -2,18 +2,7 @@
 
 import os
 import csv
-
-class PathNotFound(Exception):
-    pass
-
-class csvAlreadyExists(Exception):
-    pass
-
-class csvDoesNotExist(Exception):
-    pass
-
-class UnknownError(Exception):
-    pass
+from database_exceptions import *
 
 class database():
 
