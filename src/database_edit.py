@@ -53,10 +53,10 @@ class database():
         
         if os.path.exists(self.path) == True:
 
-            with open(self.path,"r") as f: # Check if csv already has headers, add existing headers to list [NOT WORKING NEED TO FIX]
-                reader = csv.reader(f)
+            with open(self.path,"r") as f: 
+                reader = list(csv.reader(f))
                 for line in reader:
-                    datafield.append(line)
+                    datafield.extend(line)
                 f.close()
 
         elif os.path.exists(self.path) == False:
