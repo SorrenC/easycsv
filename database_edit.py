@@ -43,14 +43,14 @@ class database():
     def delete(self):
 
         try:
-            os.remove(os.path.join(self.dir,self.filename+'.csv'))
+            os.remove(self.path)
         except FileNotFoundError:
             raise FileNotFoundError
 
     def read(self):
 
         try:
-            with open(os.path.join(self.dir,self.filename+'.csv'),"r") as f:
+            with open(self.path,"r") as f:
                 reader = csv.reader(f)
                 for line in reader:
                     print(line)
@@ -61,24 +61,22 @@ class database():
     def addfields(self,*args): 
         
         datafield = []
-
-        # Need to check if there is already headers, append to new headers 
         
-        if os.path.exists(os.path.join(self.dir,self.filename+'.csv')) == True:
+        if os.path.exists(self.path) == True:
 
-            with open(os.path.join(self.dir,self.filename+'.csv'),"r") as f: # Check if csv already has headers, add existing headers to list [NOT WORKING NEED TO FIX]
+            with open(self.path,"r") as f: # Check if csv already has headers, add existing headers to list [NOT WORKING NEED TO FIX]
                 reader = csv.reader(f)
                 for line in reader:
                     datafield.append(line)
                 f.close()
 
-        elif os.path.exists(os.path.join(self.dir,self.filename+'.csv')) == False:
+        elif os.path.exists(self.path) == False:
             raise csvDoesNotExist()
         
         for arg in args:
             datafield.append(arg)
 
-        with open(os.path.join(self.dir,self.filename+'.csv'),"a") as f:
+        with open(self.path,"a") as f:
             writer = csv.DictWriter(f,fieldnames=datafield)
             writer.writeheader()
             f.close()
