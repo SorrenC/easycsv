@@ -12,10 +12,10 @@ Copyright © 2020 Sorren Chandra
 
 # Getting Started 
 Start by cloning the repository 
-'''
+```
 git clone 
-'''
+```
 import database_edit.py
-'''
+```
 from database_edit import *
-'''
+```
