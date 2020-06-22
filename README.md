@@ -13,9 +13,31 @@ Copyright © 2020 Sorren Chandra
 # Getting Started 
 Start by cloning the repository 
 ```
-git clone 
+git clone *url*
 ```
 import database_edit.py
 ```
 from database_edit import *
+```
+# Usage 
+Create a database obejct. Pass in the path and name of an existing csv file or one you wish to create 
+```
+d = database(r'\path\to\location','filename')
+```
+## Functions 
+create: creates a .csv file at the specified location with the given name
+```
+d.create()
+```
+delete: if said .csv exists, deletes the fi;e
+```
+d.delete()
+```
+addfields: adds headers to the first row. Takes N number of arguments
+```
+d.addfields('Header1','Header2','Header3',...,'HeaderN')
+```
+read: Reads the .csv 
+```
+d.read()
 ```
