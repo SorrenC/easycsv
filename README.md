@@ -4,7 +4,7 @@
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://github.com/SorrenC/easycsv/blob/master/LICENSE)
 ![shields.io](https://img.shields.io/badge/Status%20-Work%20In%20Progress-red)
 
-Provides a group of functions for simple .csv editing. The inital need for such a script was to provide easy csv functions to help automate testing procedures. 
+Provides a group of functions for simple .csv editing. The inital need for such a script was to provide easy csv functions to help automate the creation and data entry of .csv files
 This project is a work in progress 
 
 
