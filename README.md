@@ -1,4 +1,6 @@
 # easycsv
+![Alt text](easycsv/logo.png?raw=true "Title")
+
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://github.com/SorrenC/easycsv/blob/master/LICENSE)
 
