@@ -81,4 +81,3 @@ class database():
             writer = csv.writer(f)
             for x in data:
                 writer.writerow(data)
-        
