@@ -2,6 +2,8 @@
 
 import os
 import csv
+from itertools import zip_longest
+from itertools import izip
 from database_exceptions import *
 
 class database():
@@ -18,7 +20,7 @@ class database():
         elif os.path.exists(self.dir) == False:
             os.mkdir(self.dir)
         else:
-            raise UnknownError
+            raise UnknownError  
 
         if os.path.exists(self.path) == True:
             raise csvAlreadyExists()
@@ -73,14 +75,16 @@ class database():
     
     def add_data(self,header,*args):
 
-        datalist = [] # initialize inital data list 
-        column = header
+        # Need to create a way to dynamically find exsisting headers
+        # if header is in csv file; continue; if not; raise error
 
+        datalist = [] # initialize inital data list 
         for arg in args: # Append N number of user arguments to data list
             datalist.append(arg)
+        d = datalist
+        writedata = zip_longest(*d, fillvalue='')
 
-        with open(self.path,'w+') as f:
+        with open(self.path,'w', encoding="ISO-8859-1", newline='') as f:
             writer = csv.writer(f)
-            for data in datalist:
-                writer.writerow([data])
+            writer.writerows(writedata)
                 
